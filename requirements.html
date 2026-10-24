@@ -17,6 +17,10 @@
   </head>
   <body>
     <h1>The application</h1>
+      <p>The application will be a single page audiovisual experience.</p>
+      <p>The content will be narrated stories backed with random video clips and a music score.</p> 
+      <p>Each story will be in its own chapter. Each chapter will have a short title sequence, the story section and a short credits section. The next story will automatically follow.</p>
+      <p>Story selection will be randomised, as will be the story order. The video clips behind each story will be randomly selected, as will their edit points. The background music will be randomly selected from a reasonably large library of tracks.</p>
     <h2>The assets</h2>
       <ol>
         <li>UIDs of publicly available videos from Youtube along with metadata with each video title and Youtube channel name.</li>
@@ -24,22 +28,27 @@
         <li>Music files in mp3 format, which I have written and recorded.</li>
       </ol>
      <h2>Pages</h2>
-      <p>The application will be a single HTML page only.</p 
-      <h3>Page structure</h3>
-        <p>The page will have the following layers or regions:</p>    
+      <p>The application will be a single HTML page only. It will have three views with their associated areas and non-visible/audio components.</p> 
+      <h3>Views</h3>
+        <ol>
+          <li>Title</li>
+          <li>Main video</li>
+          <li>Credits</li>
+        </ol>
+        <p>The application will have the following view areas and components:</p>    
       <ol>
-        <li>Title text area.</li>
-        <li>Titles video area.</li>
-        <li>Titles audio unit area.</li>
-        <li>Volume control, including slider and mute.</li>
-        <li>Transport controls, including pause, play and next.</li>
+        <li>Titles title text area.</li>
+        <li>Titles video content area.</li>
+        <li>Titles audio component.</li>
+        <li>Main video Volume control, including slider and mute.</li>
+        <li>Main video transport controls, including pause, play and next.</li>
         <li>Main video presentation area.</li>
-        <li>Main music audio unit area.</li>
-        <li>Main narration audio unit area.</li>
-        <li>Main narration subtitles area.</li>
+        <li>Main video music audio component.</li>
+        <li>Main video narration audio component.</li>
+        <li>Main video narration subtitles area.</li>
         <li>Credits text area.</li>
         <li>Credits video area.</li>
-        <li>Credits music unit area.</li>
+        <li>Credits music component.</li>
       </ol>
   </body>
 </html>
