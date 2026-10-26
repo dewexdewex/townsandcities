@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Towns &amp; Cities</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Shared video stage: two players cross-fade behind every view -->
+<div id="stage" aria-hidden="true">
+  <div class="clip" id="clipA"><div id="ytA"></div></div>
+  <div class="clip" id="clipB"><div id="ytB"></div></div>
+  <div id="scrim"></div>
+</div>
+
+<!-- Start (needed so browsers allow audio) -->
+<section id="view-start" class="view active">
+  <h1 class="brand">Towns &amp; Cities</h1>
+  <p id="startMsg" class="sub">Loading&hellip;</p>
+  <button id="beginBtn" class="big" disabled>Begin</button>
+</section>
+
+<!-- View 1: Titles -->
+<section id="view-title" class="view" aria-live="polite">
+  <h1 id="titleText"></h1>
+</section>
+
+<!-- View 2: Main video -->
+<section id="view-main" class="view">
+  <p id="subtitles" aria-live="off"></p>
+</section>
+
+<!-- View 3: Credits -->
+<section id="view-credits" class="view">
+  <dl id="creditsList"></dl>
+</section>
+
+<!-- Controls: volume, mute, transport -->
+<div id="controls" class="hidden">
+  <button id="playBtn" aria-label="Pause" title="Pause / play">&#10074;&#10074;</button>
+  <button id="nextBtn" aria-label="Next story" title="Next story">&#9197;</button>
+  <button id="muteBtn" aria-label="Mute" title="Mute">&#128266;</button>
+  <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+  <button id="ccBtn" aria-label="Subtitles" title="Subtitles" class="on">CC</button>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

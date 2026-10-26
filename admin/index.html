@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Towns &amp; Cities · Admin</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- Authentication -->
+<main id="login" class="card narrow">
+  <h1>Admin sign-in</h1>
+  <p class="note">Sign in with a GitHub fine-grained token that has <b>Contents: Read and write</b> on this repository. The token stays in this browser tab only and is cleared when you close it. Everything you change is saved as a commit to the repository, which is the database.</p>
+  <form id="loginForm">
+    <label>Repository owner <input id="cfgOwner" required></label>
+    <label>Repository <input id="cfgRepo" required></label>
+    <label>Branch <input id="cfgBranch" required></label>
+    <label>GitHub token <input id="cfgToken" type="password" autocomplete="off" required></label>
+    <p id="loginErr" class="err"></p>
+    <button class="primary">Sign in</button>
+    <p class="note"><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Create a token on GitHub</a></p>
+  </form>
+</main>
+
+<!-- App -->
+<div id="app" hidden>
+  <header>
+    <h1>Towns &amp; Cities · Admin</h1>
+    <nav id="tabs">
+      <button data-tab="stories" class="active">Stories</button>
+      <button data-tab="tracks">Tracks</button>
+      <button data-tab="videos">Video UIDs</button>
+    </nav>
+    <span id="who"></span>
+    <button id="signOut">Sign out</button>
+  </header>
+  <div id="status" role="status"></div>
+
+  <main>
+    <section id="pane-stories" class="pane"></section>
+    <section id="pane-tracks" class="pane" hidden></section>
+    <section id="pane-videos" class="pane" hidden></section>
+  </main>
+</div>
+
+<!-- Add / edit dialog for stories and tracks -->
+<dialog id="dlgItem">
+  <form id="itemForm" method="dialog">
+    <h2 id="itemTitle"></h2>
+    <label>Title <input name="title" required></label>
+    <label>Author <input name="author" required></label>
+    <label>Copyright date <input name="copyright" type="date"></label>
+    <label data-only="stories">Transcript <textarea name="transcript" rows="8"></textarea></label>
+    <label data-only="add">Audio file <input name="file" type="file" accept="audio/*"></label>
+    <p id="itemErr" class="err"></p>
+    <div class="row end">
+      <button type="button" id="itemCancel">Cancel</button>
+      <button class="primary">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Add CSV of UIDs dialog -->
+<dialog id="dlgCsv">
+  <form id="csvForm" method="dialog">
+    <h2>Add YouTube video UIDs</h2>
+    <p class="note">Upload a CSV or paste values. Any 11-character video ID (or a full YouTube link) found in the data is added; duplicates are skipped.</p>
+    <label>CSV file <input id="csvFile" type="file" accept=".csv,.txt,text/csv,text/plain"></label>
+    <label>Or paste <textarea id="csvText" rows="6" placeholder="dQw4w9WgXcQ, ..."></textarea></label>
+    <label class="check"><input id="csvLookup" type="checkbox" checked> Look up title and channel name from YouTube</label>
+    <p id="csvErr" class="err"></p>
+    <div class="row end">
+      <button type="button" id="csvCancel">Cancel</button>
+      <button class="primary">Add</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Confirm delete -->
+<dialog id="dlgConfirm">
+  <form method="dialog">
+    <h2>Delete</h2>
+    <p id="confirmMsg"></p>
+    <p class="note">You will have 10 seconds to undo before the change is committed.</p>
+    <div class="row end">
+      <button value="cancel">Cancel</button>
+      <button value="ok" class="danger">Delete</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toasts"></div>
+<script src="admin.js"></script>
+</body>
+</html>
