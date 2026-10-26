@@ -1,54 +1,261 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 24;
-        margin-left: 100;
-        color: #202020;
-        background-color: #dfdfdf;
-      }         
-    </style>
-  </head>
-  <body>
-    <h1>The application</h1>
-      <p>The application will be a single page audiovisual experience.</p>
-      <p>The content will be narrated stories backed with random video clips and a music score.</p> 
-      <p>Each story will be in its own chapter. Each chapter will have a short title sequence, the story section and a short credits section. The next story will automatically follow.</p>
-      <p>Story selection will be randomised, as will be the story order. The video clips behind each story will be randomly selected, as will their edit points. The background music will be randomly selected from a reasonably large library of tracks.</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>The Application – Specification</title>
+</head>
+<body>
+
+<main>
+
+  <h1>The application</h1>
+
+  <p>
+    The application will be a two-page audiovisual experience.
+  </p>
+
+  <p>
+    The content will be narrated stories backed with random
+    video clips and a music score.
+  </p>
+
+  <p>
+    Each story will be in its own chapter. Each chapter will
+    have a short title sequence, the story section and a
+    short credits section.
+  </p>
+
+  <p>The next story will automatically follow.</p>
+
+  <p>
+    Story selection will be randomised, as will be the story
+    order. The video clips behind each story will be randomly
+    selected, as will their edit points. The background music
+    will be randomly selected from a reasonably large library
+    of tracks.
+  </p>
+
+  <section id="assets">
     <h2>The assets</h2>
-      <ol>
-        <li>UIDs of publicly available videos from Youtube along with metadata with each video title and Youtube channel name.</li>
-        <li>Narrated audio file recordings of my stories in mp3 or similar format along with metadata including: Story title; date of publication; length in seconds; a full text transcript.</li>
-        <li>Music files in mp3 format, which I have written and recorded.</li>
-      </ol>
-     <h2>Pages</h2>
-      <p>The application will be a single HTML page only. It will have three views with their associated areas and non-visible/audio components.</p> 
+
+    <ol>
+      <li>
+        UIDs of publicly available videos from YouTube along
+        with metadata including each video title and YouTube
+        channel name. These will form the source for all the
+        video clips shown behind each story.
+      </li>
+      <li>
+        Narrated audio file recordings of my stories in MP3
+        or similar format, along with metadata including:
+        <ul>
+          <li>Story title</li>
+          <li>Date of publication</li>
+          <li>Length in seconds</li>
+          <li>Full text transcript</li>
+        </ul>
+      </li>
+      <li>
+        Music files in MP3 format, which I have written and
+        recorded. Metadata will include:
+        <ul>
+          <li>Track title</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="pages">
+    <h2>Pages</h2>
+
+    <section id="public">
+      <h2>Public</h2>
+
+      <p>
+        The public-facing page will have three views with
+        their associated areas and non-visible/audio
+        components.
+      </p>
+
       <h3>Views</h3>
-        <ol>
-          <li>Title</li>
-          <li>Main video</li>
-          <li>Credits</li>
-        </ol>
-        <p>The application will have the following view areas and components:</p>    
+
       <ol>
-        <li>Titles title text area.</li>
-        <li>Titles video content area.</li>
-        <li>Titles audio component.</li>
-        <li>Main video Volume control, including slider and mute.</li>
-        <li>Main video transport controls, including pause, play and next.</li>
-        <li>Main video presentation area.</li>
-        <li>Main video music audio component.</li>
-        <li>Main video narration audio component.</li>
-        <li>Main video narration subtitles area.</li>
-        <li>Credits text area.</li>
-        <li>Credits video area.</li>
-        <li>Credits music component.</li>
+        <li>Title</li>
+        <li>Main video</li>
+        <li>Credits</li>
       </ol>
-  </body>
+
+      <h3>View areas and components</h3>
+
+      <ol>
+        <li>Titles: Title text area.</li>
+        <li>Titles: Video content area.</li>
+        <li>Titles: Audio component.</li>
+        <li>
+          Main video: Volume control, including slider
+          and mute.
+        </li>
+        <li>
+          Main video: Transport controls, including pause,
+          play and next.
+        </li>
+        <li>Main video: Presentation area.</li>
+        <li>Main video: Music audio component.</li>
+        <li>Main video: Narration audio component.</li>
+        <li>Main video: Narration subtitles area.</li>
+        <li>
+          Credits: Text area with fields for:
+          <ul>
+            <li>Story title</li>
+            <li>Story author</li>
+            <li>Copyright date</li>
+            <li>Track title</li>
+            <li>Track author</li>
+            <li>Track copyright</li>
+          </ul>
+        </li>
+        <li>Credits: Video area.</li>
+        <li>Credits: Music component.</li>
+      </ol>
+    </section>
+
+    <section id="admin">
+      <h2>Admin</h2>
+
+      <p>
+        The Admin page will have views which satisfy those
+        of a CRUD-type application.
+      </p>
+
+      <p>
+        If possible, for the purposes of authentication/access,
+        it will exist in the GitHub repository account scope
+        where the application is hosted and use the GitHub
+        authentication flow.
+      </p>
+
+      <p>
+        I assume some type of database will be used to hold
+        records of content uploaded and its state.
+      </p>
+
+      <ol>
+        <li>Authentication flow.</li>
+
+        <li>Browse stories.</li>
+
+        <li>Search stories.</li>
+
+        <li>
+          Edit story. Text input fields for editing metadata
+          including:
+          <ul>
+            <li>Story title</li>
+            <li>Author</li>
+            <li>Copyright details (date widget)</li>
+          </ul>
+        </li>
+
+        <li>
+          Delete story. Requires confirm/undo functionality.
+          Incorporate into Browse/Search view. Use selection
+          checkboxes in the list to facilitate multiple
+          selections.
+        </li>
+
+        <li>
+          Add story. Upload of audio file. Addition of story
+          metadata values of:
+          <ul>
+            <li>Story title</li>
+            <li>Story author</li>
+            <li>Story copyright (date widget)</li>
+          </ul>
+        </li>
+
+        <li>
+          Browse stories. Displays a listing of stories in
+          title alphabetical order with a date added column.
+          Has column sorting on story name and date added.
+        </li>
+
+        <li>
+          Search stories. A subview of Browse stories.
+          A text input with search and clear buttons.
+          Search action invokes a redisplay of the browse
+          stories listing.
+        </li>
+
+        <li>
+          Browse tracks. Displays a listing of tracks in
+          title alphabetical order with a date added column.
+          Has column sorting on track name and date added.
+        </li>
+
+        <li>
+          Search tracks. A subview of Browse tracks.
+          A text input with search and clear buttons.
+          Search action invokes a redisplay of the browse
+          tracks listing.
+        </li>
+
+        <li>
+          Edit track. Allows editing of track metadata:
+          <ul>
+            <li>Track title</li>
+            <li>Track author</li>
+            <li>Track copyright (date widget)</li>
+          </ul>
+        </li>
+
+        <li>
+          Delete track(s). Requires confirm/undo functionality.
+          Incorporate into Browse/Search view. Use selection
+          checkboxes in the list to facilitate multiple
+          selections.
+        </li>
+
+        <li>
+          Add track. Allows MP3 file upload and addition
+          of track metadata:
+          <ul>
+            <li>Track title</li>
+            <li>Track author</li>
+            <li>Track copyright (date widget)</li>
+          </ul>
+        </li>
+
+        <li>
+          Add CSV list of YouTube video 11-character UIDs.
+        </li>
+
+        <li>
+          Browse UIDs. Table listing view with UID and
+          date added columns.
+        </li>
+
+        <li>
+          Search UIDs. A subview of Browse UIDs.
+          A text input with search and clear buttons.
+          Search action invokes a redisplay of the browse
+          UIDs table listing.
+        </li>
+
+        <li>
+          Delete UID(s). Requires confirm/undo functionality.
+          Incorporate into Browse/Search view. Use selection
+          checkboxes in the list to facilitate multiple
+          selections.
+        </li>
+      </ol>
+    </section>
+
+  </section>
+
+</main>
+
+</body>
 </html>
