@@ -1,1 +1,12 @@
-{ "tracks": [] }
+{
+  "tracks": [
+    {
+      "id": "ab4791536d",
+      "title": "AB 1",
+      "author": "David Wiles",
+      "copyright": "2026-10-26",
+      "file": "audio/music/ab-1-ab4791536d.mp3",
+      "added": "2026-10-26T21:49:51.847Z"
+    }
+  ]
+}
